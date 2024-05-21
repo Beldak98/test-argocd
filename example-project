@@ -1,0 +1,15 @@
+kind: AppProject
+metadata:
+  name: example-project
+  namespace: dev-1-18-devops-argocd-ns
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - namespace: argo-test-ns
+    server: https://kubernetes.default.svc
+  orphanedResources:
+    warn: false
+  sourceRepos:
+  - '*'
